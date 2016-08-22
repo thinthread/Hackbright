@@ -33,21 +33,14 @@ def menu_prompt():
 #1
 def show_all_lists():   
    print main_list
-#2-2
+#2-1
 def show_all_stores():
     current_stores = main_list.keys()
     print "These are your store options!", current_stores
-#2-1
-def show_sorted_list(store):
-    if store in main_list:
-        main_list[store] =[]#main_list.values()
-        return show_sorted_list[store].keys()#.values()
- # main_list[chosen_list] = []#######################################?????????
-    # main_list[chosen_list].values()
-    # for values in main_list[chosen_list].sort():
-    #     print main_list[chosen_list].value ()
-    #     return main_list[chosen_list].values()
-
+#2-2
+def show_sorted_list(chosen_list):
+    if chosen_list in main_list:
+        return main_list[chosen_list]
 
 #3-1
 def add_new_list(nick_name):
@@ -108,11 +101,12 @@ def main():
             show_all_lists()
 
         if selection == 2:
-            chosen_list = raw_input("What store shopping list would you like to see?:\n")
-            # print show_sorted_list(chosen_list).values() #??????
-            # print show_sorted_list
-            show_sorted_list()
             show_all_stores()
+
+            chosen_list = raw_input("What store shopping list would you like to see?:\n")
+
+            print show_sorted_list(chosen_list)
+           
 
         if selection == 3:
            store_name=  raw_input("what store do you want to add?:\n ")
